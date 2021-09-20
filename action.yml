@@ -1,0 +1,21 @@
+name: 'TravelNest Diagram Deploy'
+description: 'Deploy a diagram to Structurizr'
+inputs:
+  architecture_file:
+    description: 'File path for architecture'
+    required: true
+  structurizr_workspace_id:
+    description: 'Structurizr workspace ID'
+    required: true
+  structurizr_api_key:
+    description: 'Structurizr API Key'
+    required: true
+  structurizr_api_secret:
+    description: 'Structurizr API Secret'
+    required: true
+outputs:
+  result:
+    description: "Result of the action"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
