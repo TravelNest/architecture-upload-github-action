@@ -4,14 +4,11 @@ inputs:
   architecture_file:
     description: 'File path for architecture'
     required: true
-  structurizr_workspace_id:
-    description: 'Structurizr workspace ID'
+  aws_access_key_id:
+    description: 'AWS Access key ID with permission to write to architecture s3 bucket'
     required: true
-  structurizr_api_key:
-    description: 'Structurizr API Key'
-    required: true
-  structurizr_api_secret:
-    description: 'Structurizr API Secret'
+  aws_secret_access_key:
+    description: 'AWS Secret access key associated with above access key'
     required: true
 outputs:
   result:

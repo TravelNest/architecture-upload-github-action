@@ -1,0 +1,12 @@
+people:
+  -
+    name: Dave
+    description: He's a good guy
+components:
+  -
+    name: Machine
+    description: Grinds stuff up
+    relationships:
+      -
+        to: Other Thingy
+        description: All good

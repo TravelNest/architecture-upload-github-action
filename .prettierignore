@@ -1,0 +1,12 @@
+build
+node_modules
+coverage
+infra
+.github
+.vscode
+
+.eslintrc
+.nvmrc
+
+/*.js
+/*.json

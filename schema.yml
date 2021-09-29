@@ -1,0 +1,44 @@
+---
+views:
+  -
+    name:
+      type: string
+      required: true
+    description:
+      type: string
+people:
+  -
+    name:
+      type: string
+      required: true
+    description:
+      type: string
+    views:
+      -
+        type: string
+    relationships:
+      -
+        to:
+          type: string
+          required: true
+        description:
+          type: string
+components:
+  -
+    name:
+      type: string
+      required: true
+    arn:
+      type: string
+    description:
+      type: string
+    views:
+      -
+        type: string
+    relationships:
+      -
+        to:
+          type: string
+          required: true
+        description:
+          type: string

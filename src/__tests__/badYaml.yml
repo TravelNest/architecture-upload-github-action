@@ -1,0 +1,7 @@
+components:
+  -
+    name: Machine
+    description: Grinds stuff up
+    relationships:
+      -
+        description: Missing "to" part

@@ -1,18 +1,15 @@
-# Diagram Deployment Github Action
-This GitHub action will automatically read an architecture file and deploy it as a diagram to Strucurizr for viewing.
+# Architecture Upload Github Action
+This GitHub action will automatically read an architecture file and upload it to S3 for processing.
 
 ## Inputs
 ### `architecture_file`
-**Required** File path for architecture
+**Required** File path for architecture.
 
-### `structurizr_workspace_id`
-**Required** Structurizr workspace ID
+### `aws_access_key_id`
+**Required** AWS Access key ID with permission to write to architecture s3 bucket.
 
-### `structurizr_api_key`
-**Required** Structurizr API Key
-
-### `structurizr_api_secret`
-**Required** Structurizr API Secret
+### `aws_secret_access_key`
+**Required** AWS Secret access key associated with above access key.
 
 ## Outputs
 ### `result`
@@ -22,14 +19,13 @@ The result of the upload to Structurizr.
 ```yaml
 - name: Checkout
   uses: actions/checkout@v2
-- name: Diagram Upload
-  id: diagram_upload
-  uses: TravelNest/diagram-deploy@master
+- name: Architecture Upload
+  id: architecture-upload
+  uses: TravelNest/architecture-upload-github-action@master
   with:
     architecture_file: architecture.yml
-    structurizr_workspace_id: ${{ secrets.STRUCTURIZR_WORKSPACE_ID }}
-    structurizr_api_key: ${{ secrets.STRUCTURIZR_API_KEY }}
-    structurizr_api_secret: ${{ secrets.STRUCTURIZR_API_SECRET }}
+    aws_access_key_id: <Your Access Key>
+    aws_secret_access_key: <Your Secret Key>
   - name: Get the output
-  run: echo ${{ steps.diagram_upload.outputs.result }}
+    run: echo ${{ steps.architecture-upload.outputs.result }}
 ```

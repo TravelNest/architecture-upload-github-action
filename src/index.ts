@@ -1,13 +1,11 @@
-import { getInput, setOutput } from '@actions/core';
-import { read } from './inputReader';
-import { build } from './workspaceBuilder';
-import { pushWorkspace } from './structurizrClient';
+import { processFile } from './processor';
 
 
-const doc = read('/github/workspace/example.yml');
-//const doc = read(getInput('architecture_file'));
-const workspace = build(doc);
-pushWorkspace(workspace)
-.then(response => {
-  setOutput('result', response);
-});
+processFile('/github/workspace/architecture.yml')
+.then(() => {
+  console.log('Processing complete');
+})
+.catch((ex => {
+  console.error(ex);
+  throw ex;
+}));

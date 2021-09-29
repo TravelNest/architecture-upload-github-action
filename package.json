@@ -1,33 +1,57 @@
 {
-  "name": "diagram-deploy",
+  "name": "architecture-upload-github-action",
   "version": "1.0.0",
-  "description": "This GitHub action will automatically deploy a diagram to Strucurizr for viewing.",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "start": "tsc && node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TravelNest/diagram-deploy.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TravelNest/diagram-deploy/issues"
-  },
-  "homepage": "https://github.com/TravelNest/diagram-deploy#readme",
+  "private": true,
   "dependencies": {
     "@actions/core": "^1.5.0",
     "@actions/github": "^5.0.0",
-    "@aws-sdk/util-arn-parser": "^3.32.0",
-    "js-yaml": "^4.1.0",
-    "structurizr-typescript": "^1.0.11"
+    "aws-sdk": "^2.1015.0",
+    "yaml-schema-validator": "^1.2.3"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "lint": "eslint . --ext ts",
+    "build": "tsc",
+    "format": "prettier --write .",
+    "start": "tsc && node dist/index.js"
   },
   "devDependencies": {
+    "@travelnest/eslint-config": "^0.0.2",
+    "@types/jest": "^27.0.2",
     "@types/js-yaml": "^4.0.3",
     "@types/node": "^16.9.4",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "jest": "^27.3.1",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.7",
     "typescript": "^4.4.3"
+  },
+  "jest": {
+    "testURL": "http://localhost/",
+    "clearMocks": true,
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.json"
+      }
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/build/"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
   }
 }

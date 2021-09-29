@@ -1,0 +1,19 @@
+{
+  "env": {
+    "browser": false,
+    "es6": true
+  },
+  "extends": [
+    "@travelnest/eslint-config/.eslintrc",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "eslint-plugin-prefer-arrow",
+    "@typescript-eslint"
+  ]
+}
