@@ -26,6 +26,6 @@ The result of the upload to Structurizr.
     architecture_file: architecture.yml
     aws_access_key_id: <Your Access Key>
     aws_secret_access_key: <Your Secret Key>
-  - name: Get the output
-    run: echo ${{ steps.architecture-upload.outputs.result }}
+- name: Get the output
+  run: echo ${{ steps.architecture-upload.outputs.result }}
 ```
