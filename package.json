@@ -16,7 +16,6 @@
     "start": "tsc && node dist/index.js"
   },
   "devDependencies": {
-    "@travelnest/eslint-config": "^0.0.2",
     "@types/jest": "^27.0.2",
     "@types/js-yaml": "^4.0.3",
     "@types/node": "^16.9.4",
