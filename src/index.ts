@@ -1,7 +1,9 @@
+import { getInput } from '@actions/core';
 import { processFile } from './processor';
 
 
-processFile('/github/workspace/architecture.yml')
+const architecture_file = getInput('architecture_file');
+processFile(`/github/workspace/source_repo/${architecture_file}`)
 .then(() => {
   console.log('Processing complete');
 })

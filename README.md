@@ -19,6 +19,8 @@ The result of the upload to Structurizr.
 ```yaml
 - name: Checkout
   uses: actions/checkout@v2
+  with:
+    path: source_repo # Ensure that you checkout the original source with architecture.yml into this path
 - name: Architecture Upload
   id: architecture-upload
   uses: TravelNest/architecture-upload-github-action@master
