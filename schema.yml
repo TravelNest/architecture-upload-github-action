@@ -32,6 +32,8 @@ components:
       type: string
     description:
       type: string
+    override_url:
+      type: string
     views:
       -
         type: string
